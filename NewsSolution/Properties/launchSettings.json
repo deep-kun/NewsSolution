@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NewsSolution": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
