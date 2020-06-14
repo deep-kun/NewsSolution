@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace NewsSolution.Core
@@ -6,24 +8,25 @@ namespace NewsSolution.Core
     class App
     {
         private readonly INewsProvider newsProvider;
+        private readonly IKafkaProducer kafkaProducer;
 
-        public App(INewsProvider newsProvider)
+        public App(INewsProvider newsProvider, IKafkaProducer  kafkaProducer)
         {
             this.newsProvider = newsProvider;
+            this.kafkaProducer = kafkaProducer;
         }
 
         public async Task Run(string[] args)
         {
-            var result = newsProvider.GetData();
-
-            foreach (var item in result.News)
+            while (true)
             {
-                Console.WriteLine(item.Title);
+                var result = newsProvider.GetData();
+                
+                this.kafkaProducer.PostMessage(result.News.Select(Mapper.MapNewsDtoToNewsItem).ToArray());
+
+                Console.WriteLine(DateTime.Now);
+                Thread.Sleep(15000);
             }
-
-            Console.WriteLine(result.News.Length);
-
-            Console.ReadLine();
 
             await Task.CompletedTask;
         }

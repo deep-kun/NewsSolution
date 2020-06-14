@@ -31,6 +31,7 @@ namespace NewsSolution
 
             services.AddTransient<App>();
             services.AddTransient<INewsProvider, NewsProvider>();
+            services.AddTransient<IKafkaProducer, KafkaProducer>();
         }
     }
 }

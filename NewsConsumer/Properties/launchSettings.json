@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NewsConsumer": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

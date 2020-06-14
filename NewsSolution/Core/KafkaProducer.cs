@@ -6,7 +6,7 @@ using System.Net;
 
 namespace NewsSolution.Core
 {
-    class KafkaProducer
+    class KafkaProducer : IKafkaProducer
     {
         private readonly AppSettings options;
 
