@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsSolution", "NewsSolution\NewsSolution.csproj", "{192F21A3-EA4C-4842-BA04-A23E0359CD1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsConsumer", "NewsConsumer\NewsConsumer.csproj", "{78D6D758-80C7-4F7F-B874-0D830DC2D6B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsConsumer", "NewsConsumer\NewsConsumer.csproj", "{78D6D758-80C7-4F7F-B874-0D830DC2D6B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "News.Models", "News.Models\News.Models.csproj", "{E13DD5CC-01F6-4257-8C96-A1BBBAB3DBF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsViewer", "NewsViewer\NewsViewer.csproj", "{5AB2A3FA-9522-4BD8-A198-02A2B4EC5A62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{78D6D758-80C7-4F7F-B874-0D830DC2D6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78D6D758-80C7-4F7F-B874-0D830DC2D6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78D6D758-80C7-4F7F-B874-0D830DC2D6B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E13DD5CC-01F6-4257-8C96-A1BBBAB3DBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E13DD5CC-01F6-4257-8C96-A1BBBAB3DBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E13DD5CC-01F6-4257-8C96-A1BBBAB3DBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E13DD5CC-01F6-4257-8C96-A1BBBAB3DBF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB2A3FA-9522-4BD8-A198-02A2B4EC5A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB2A3FA-9522-4BD8-A198-02A2B4EC5A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB2A3FA-9522-4BD8-A198-02A2B4EC5A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB2A3FA-9522-4BD8-A198-02A2B4EC5A62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

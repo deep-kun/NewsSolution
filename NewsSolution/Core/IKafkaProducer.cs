@@ -1,4 +1,4 @@
-﻿using News.Models;
+﻿using NewsSolution.Model;
 
 namespace NewsSolution.Core
 {

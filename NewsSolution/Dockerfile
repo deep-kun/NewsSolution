@@ -5,14 +5,14 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["NewsSolution.csproj", "NewsSolution/"]
-RUN dotnet restore "NewsSolution/NewsSolution.csproj"
+COPY NewsSolution.csproj .
+RUN dotnet restore NewsSolution.csproj
 COPY . .
-WORKDIR "/src/NewsSolution"
-RUN dotnet build "NewsSolution.csproj" -c Release -o /app/build
+RUN dotnet publish -c Release -o out
+
 
 FROM build AS publish
-RUN dotnet publish "NewsSolution.csproj" -c Release -o /app/publish
+RUN dotnet publish "./NewsSolution.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app

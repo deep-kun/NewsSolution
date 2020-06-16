@@ -1,11 +1,10 @@
-﻿using News.Models;
-using NewsSolution.Model;
+﻿using NewsSolution.Model;
 
 namespace NewsSolution.Core
 {
     static class Mapper
     {
-        public static NewsItem MapNewsDtoToNewsItem(NewsSolution.Model.News news) => new NewsItem
+        public static NewsItem MapNewsDtoToNewsItem(News news) => new NewsItem
         {
             Author = news.Author,
             Category = news.Category,

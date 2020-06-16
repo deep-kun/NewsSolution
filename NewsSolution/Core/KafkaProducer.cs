@@ -1,6 +1,6 @@
 ﻿using Confluent.Kafka;
 using Microsoft.Extensions.Options;
-using News.Models;
+using NewsSolution.Model;
 using Newtonsoft.Json;
 using System.Net;
 
