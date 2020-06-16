@@ -1,5 +1,8 @@
 ﻿using Confluent.Kafka;
 using System;
+using System.Data.SqlClient;
+using Dapper;
+using System.Runtime.CompilerServices;
 
 namespace NewsConsumer
 {
@@ -24,10 +27,20 @@ namespace NewsConsumer
                 {
                     var consumeResult = consumer.Consume();
                     var messageValue = consumeResult.Message.Value;
+                    PutDataIntoDb(messageValue);
                     Console.WriteLine($"Recived {DateTime.Now}");
                     Console.WriteLine(messageValue);
                 }
                 consumer.Close();
+            }
+        }
+
+        private static void PutDataIntoDb(string data)
+        {
+            using (var sqlConnection = new SqlConnection("Server=db;Database=News;User=sa;Password=Your_password123;"))
+            {
+                sqlConnection.Open();
+                sqlConnection.Query($"insert into news values('{data}')");
             }
         }
     }
