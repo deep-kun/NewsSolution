@@ -15,16 +15,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
   db:
-    #image: "mcr.microsoft.com/mssql/server"
     build: .\db\.
     ports:
       - "5000:1433"
     build:
       context: .
       dockerfile: data/Dockerfile
-    #environment:
-    #  SA_PASSWORD: "Your_password123"
-    #  ACCEPT_EULA: "Y"
   web:
     build: .\NewsViewer\.      
     ports:
