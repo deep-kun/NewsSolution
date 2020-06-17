@@ -14,7 +14,7 @@ namespace NewsConsumer
 
             var config = new ConsumerConfig
             {
-                BootstrapServers = "localhost:9092",
+                BootstrapServers = "kafka:9092",
                 GroupId = "foo",
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };
@@ -37,7 +37,7 @@ namespace NewsConsumer
 
         private static void PutDataIntoDb(string data)
         {
-            using (var sqlConnection = new SqlConnection("Server=db;Database=News;User=sa;Password=Your_password123;"))
+            using (var sqlConnection = new SqlConnection("Server=127.0.0.1,5000;Database=News;User=sa;Password=Your_password123;"))
             {
                 sqlConnection.Open();
                 sqlConnection.Query($"insert into news values('{data}')");

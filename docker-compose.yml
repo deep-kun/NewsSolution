@@ -22,11 +22,14 @@ services:
       SA_PASSWORD: "Your_password123"
       ACCEPT_EULA: "Y"
   web:
-    build: .\NewsViewer\.
+    build: .\NewsViewer\.      
     ports:
       - "8000:80"
   consumer:
     build: .\NewsConsumer\.
+    depends_on:
+      - kafka
   producer:
     build: .\NewsSolution\.
-    
+    depends_on:
+      - kafka
